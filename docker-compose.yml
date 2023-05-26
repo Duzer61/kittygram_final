@@ -31,6 +31,7 @@ services:
       - db_kitty
     volumes:
       - static:/backend_static
+      - media:/media
   # Имя третьего контейнера. Это контейнер с фронтендом
   frontend:
     env_file: .env
@@ -46,6 +47,7 @@ services:
     env_file: .env
     volumes:
       - static:/staticfiles/
+      - media:/media
     # Ключ ports устанавливает
     # перенаправление всех запросов с порта 8000 хоста
     # на порт 80 контейнера.
